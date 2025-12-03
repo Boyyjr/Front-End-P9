@@ -39,13 +39,13 @@ function Product({ name, price, discount, brand, os, image }) {
   return (
     <div
       style={{
-        border: "1px solid #ddd",
-        borderRadius: "10px",
-        padding: "15px",
+        border: "1px solid #e0e0e0",
+        borderRadius: "12px",
+        padding: "18px",
         width: "280px",
-        boxShadow: "0 2px 6px rgba(0,0,0,0.1)",
-        background: "white",
-        transition: "0.2s",
+        boxShadow: "0 4px 10px rgba(0,0,0,0.08)",
+        background: "#fafafa",
+        transition: "0.25s",
       }}
     >
       <img
@@ -53,26 +53,37 @@ function Product({ name, price, discount, brand, os, image }) {
         style={{
           width: "100%",
           borderRadius: "10px",
-          marginBottom: "10px"
+          marginBottom: "12px",
         }}
       />
 
-      <h2 style={{ fontSize: "20px", marginBottom: "5px" }}>{name}</h2>
+      <h2 style={{ fontSize: "20px", fontWeight: "600", marginBottom: "8px", color: "#333" }}>
+        {name}
+      </h2>
 
-      <p style={{ margin: "3px 0" }}><b>Brand:</b> {brand}</p>
-      <p style={{ margin: "3px 0" }}>
-        <b>OS:</b> {os === "iOS" ? "iOS (Apple)" : "Android"}
+      <p style={{ margin: "4px 0" }}>
+        <b style={{ color: "#444" }}>Brand:</b> {brand}
+      </p>
+
+      <p style={{ margin: "4px 0" }}>
+        <b style={{ color: "#444" }}>OS:</b>{" "}
+        <span style={{ color: os === "iOS" ? "#0070f3" : "#0fa958" }}>
+          {os === "iOS" ? "iOS (Apple)" : "Android"}
+        </span>
       </p>
 
       {discount > 0 ? (
-        <p style={{ margin: "3px 0", color: "gray" }}>
-          <s>Rp {price}</s> <span style={{ color: "red" }}>({discount}% off)</span>
+        <p style={{ margin: "4px 0", color: "#777" }}>
+          <s>Rp {price}</s>{" "}
+          <span style={{ color: "#ff2e2e", fontWeight: "bold" }}>
+            ({discount}% off)
+          </span>
         </p>
       ) : (
-        <p style={{ margin: "3px 0" }}>Tidak ada diskon</p>
+        <p style={{ margin: "4px 0", color: "#777" }}>Tidak ada diskon</p>
       )}
 
-      <p style={{ fontWeight: "bold", fontSize: "18px", color: "green" }}>
+      <p style={{ fontWeight: "700", fontSize: "20px", color: "#009944", marginTop: "6px" }}>
         Rp {finalPrice}
       </p>
     </div>
@@ -81,8 +92,17 @@ function Product({ name, price, discount, brand, os, image }) {
 
 function App() {
   return (
-    <div style={{ padding: "20px" }}>
-      <h1 style={{ marginBottom: "20px" }}>Daftar Produk</h1>
+    <div style={{ padding: "25px" }}>
+      <h1
+        style={{
+          marginBottom: "25px",
+          fontSize: "30px",
+          color: "#222",
+          fontWeight: "700",
+        }}
+      >
+        Daftar Produk
+      </h1>
 
       <div
         style={{
